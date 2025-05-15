@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrantes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/US/integrantes.css') }}">
+</head>
+<body>
+    {% include 'US/componentes/header.html' %}
+    <main>
+        {% include 'US/componentes/carrusel.html' %}
+        <h1>Directiva</h1>
+        <div class="card-container">
+        {% for Integrante in Integrantes %}
+            {% if Integrante.CARG %}
+            <div class="card">
+                <div class="card-header">
+                    <img src="{{ Integrante.IMG }}" alt="{{ Integrante.NOCOR }}">
+                </div>
+                <div class="card-body">
+                    <table>
+                        <tr>
+                            <th>Nombre</th>
+                            <td>{{ Integrante.NOCOR }}</td>
+                        </tr>
+                        <tr>
+                            <th>Cargo</th>
+                            <td>{{ Integrante.CARG }}</td>
+                            
+                        </tr>
+                        <tr>
+                            <th>Apodo</th>
+                            <td>{{ Integrante.APOD }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+        <h1>Integrantes</h1>
+        <div class="card-container">
+        {% for Integrante in Integrantes %}
+            {% if not Integrante.CARG %}
+            <div class="card">
+                <div class="card-header">
+                    <img src="{{ Integrante.IMG }}" alt="{{ Integrante.NOCOR }}">
+                </div>
+                <div class="card-body">
+                    <table>
+                        <tr>
+                            <th>Nombre</th>
+                            <td>{{ Integrante.NOCOR }}</td>
+                        </tr>
+                        <tr>
+                            <th>Apodo</th>
+                            <td>{{ Integrante.APOD }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </main>
+    {% include 'US/componentes/footer.html' %}
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/US/home.css') }}">
+</head>
+<body>
+    {% include 'US/componentes/header.html' %}
+    <main>
+        {% include 'US/componentes/carrusel.html' %}
+        <aside>
+            <img src="{{ Usuario.IMG }}" alt="foto-integrante">
+            <h2>{{ Usuario.NOM }}</h2>
+            <h4>{{ Usuario.APE }}</h4>
+            <table class="fondos">
+                <thead>
+                    <tr>
+                        <th>Fondos Elite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>S/ {{ "%.2f"|format(Integrantes[0].SaldoT()) }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+
+        <section class="tabla-integrantes">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dumento</th>
+                        <th>Nombre</th>
+                        <th>Apodo</th>
+                        <th>Cargo</th>
+                        <th>Saldo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for Integrante in Integrantes %}
+                    <tr>
+                        <td>{{ Integrante.TDOC }} - {{ Integrante.NDOC}}</td>
+                        <td>{{ Integrante.NOCOR }}</td>
+                        <td>{{ Integrante.APOD }}</td>
+                        {% if Integrante.CARG %}
+                        <td>{{ Integrante.CARG }}</td>
+                        {% else %}
+                        <td></td>
+                        {% endif %}
+                        <td>S/ {{ "%.2f"|format(Integrante.SDO) }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="botones">
+                <form action="/integrantes">
+                    <button class="btnDetalles" type="submit">Ver Detalles</button>
+                </form>
+                <form action="Movimientos">
+                    <button class="btnMovimientos" type="submit">Ver Movimientos</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    {% include 'US/componentes/footer.html' %}
+</body>
+</html>

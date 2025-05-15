@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="static/css/US/componentes/carrusel.css">
+
+<div class="carousel">
+    <div class="carousel-track">
+        <div class="carousel-slide">
+            <img src="{{ url_for('static', filename='img/carrusel/banner.jpg') }}" alt="Slide 1">
+        </div>
+        <div class="carousel-slide">
+            <img src="{{ url_for('static', filename='img/carrusel/banner2.jpg') }}" alt="Slide 2">
+        </div>
+        <div class="carousel-slide">
+            <img src="{{ url_for('static', filename='img/carrusel/banner3.jpg') }}" alt="Slide 3">
+        </div>
+        <div class="carousel-slide">
+            <img src="{{ url_for('static', filename='img/carrusel/banner4.jpg') }}" alt="Slide 4">
+        </div>
+    </div>
+    <div class="carousel-indicators">
+        <div class="carousel-indicator active" data-slide="0"></div>
+        <div class="carousel-indicator" data-slide="1"></div>
+        <div class="carousel-indicator" data-slide="2"></div>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/US/componentes/carrusel.js') }}"></script>

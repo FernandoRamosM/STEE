@@ -1,0 +1,147 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+/* Contenedor principal */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Aside estilizado */
+aside {
+    flex: 1 1 300px;
+    max-width: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+aside img {
+    width: 120px;
+    height: 120px;
+    border-radius: 5%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Tabla Fondos*/
+.fondos {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    border-top: #000000 5px solid;
+}
+
+.fondos th, .fondos td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 36px;
+}
+.fondos th {
+    background: #0078D4;
+    color: white;
+}
+/* Tabla estilizada */
+.tabla-integrantes {
+    width: 75%;
+}
+.tabla-integrantes table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tabla-integrantes th, .tabla-integrantes td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-integrantes th {
+    background: #0078D4;
+    color: white;
+}
+
+.tabla-integrantes tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.tabla-integrantes tr:hover {
+    background: #eaeaea;
+    transition: 0.3s;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    }
+
+.btnDetalles {
+    background: rgba(0, 0, 255, 0.09);
+    border: none;
+    border-bottom: 2px solid #d40000;
+    border-radius: 5px;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.3s;
+}
+.btnMovimientos {
+    background: rgba(0, 0, 255, 0.09);
+    border: none;
+    border-bottom: 2px solid #d40000;
+    border-radius: 5px;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.btnDetalles:hover {
+    background: #0078D4;
+    color: white;
+    border: none;
+    transform: scale(1.1);
+}
+.btnMovimientos:hover {
+    background: #0078D4;
+    color: white;
+    border: none;
+    transform: scale(1.1);
+}
+/* Responsividad */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+    .tabla-integrantes {
+        width: 100%;
+    }
+    .tabla-integrantes table {
+        display: block;
+        overflow-x: auto;
+    }
+}

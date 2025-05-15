@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="sp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/STRC4.css">
+    <title>Login - Equipo Elite</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="section-login">
+            <div class="content-login">
+                <div class="login-header">
+                    <h1>Equipo Elite</h1>
+                    <img src="static/img/logo-ee.png" alt="logo-elite">
+                </div>
+                <div class="login-body">
+                    <form action="/" method="post">
+                        <div class="login-input">
+                            <label>Documento</label>
+                            <input type="text" name="NDOC" placeholder="Nro Documento">
+                            <select name="TDOC" id="Documento">
+                                <optgroup label="Tipo Documento">
+                                    <option value="DNI">DNI</option>
+                                    <option value="CE">CE</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="login-input">
+                            <label for="Contraseña">Contraseña</label>
+                            <input type="password" name="PW" placeholder="Contraseña">
+                        </div>
+                        <button type="submit">Ingresar</button>
+                    </form>
+                    {% if MENSAJE %}
+                    <p style="color: red; text-align: center;">{{ MENSAJE }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
